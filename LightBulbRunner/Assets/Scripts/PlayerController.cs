@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 	public float leftRightSpeed;
-	public Rigidbody rb;
 	public int lives;
 	public int speed;
 	private int score;
 	public Text scoreText;
+
+	private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		// Player Movement
-		if (Input.GetKey("a"))
+		if (Input.GetKey ("a"))
 			rb.AddForce(leftRightSpeed, 0, 0, ForceMode.Impulse);
 
 		if (Input.GetKey("d"))
