@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
             //Destroy(other.gameObject);
         }
+		if (other.CompareTag ("Lightbulb")) {
+			other.gameObject.SetActive (false);
+		}
     }
 
     private void DropLife()
