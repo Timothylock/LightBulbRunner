@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		score = 0;
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -speed);
 	}
 
 	// Update is called once per frame
