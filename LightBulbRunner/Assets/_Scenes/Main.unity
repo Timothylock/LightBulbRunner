@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -301,10 +301,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 279171334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6d186013125054781d55410c7612af, type: 3}
+  m_Script: {fileID: 11500000, guid: 60414280fc9a942f486d4eeec12c6148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftRightSpeed: 1
+  jumpHeight: 1
   lives: 3
   speed: 3
   scoreText: {fileID: 0}
@@ -744,26 +745,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4848618593501514, guid: a19aa0f0383e64fe2a01c090c199f4ca,
     type: 2}
   m_PrefabInternal: {fileID: 1273862661}
---- !u!1 &1347743089 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1894148152502574, guid: 7fc89e78a721049f6a6eee1b15e44fac,
-    type: 2}
-  m_PrefabInternal: {fileID: 279171333}
---- !u!114 &1347743094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1347743089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6d186013125054781d55410c7612af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftRightSpeed: 1
-  lives: 1
-  speed: 1
-  scoreText: {fileID: 732884721}
 --- !u!1001 &1397995021
 Prefab:
   m_ObjectHideFlags: 0
