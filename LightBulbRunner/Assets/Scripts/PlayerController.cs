@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 	public float leftRightSpeed;
+	public float jumpHeight;
 	public int lives;
 	public int speed;
 	private int score;
 	public Text scoreText;
 
 	private Rigidbody rb;
+	private bool isGrounded;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKey("d"))
 			rb.AddForce(-leftRightSpeed, 0, 0, ForceMode.Impulse);
+
+		if (Input.GetKey ("w") && isGrounded)
+			isGrounded = false;
+			//rb.velocity += jumpHeight * Vector3.up;
 	}
 
 	private void OnTriggerEnter(Collider other) {
@@ -44,6 +50,9 @@ public class PlayerController : MonoBehaviour
 			other.gameObject.SetActive (false);
 			score += 1;
 			SetCountText ();
+		}
+		if (other.CompareTag ("floor")) {
+			isGrounded = true;
 		}
 	}
 
