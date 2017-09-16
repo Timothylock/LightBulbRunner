@@ -41,6 +41,14 @@ public class PlayerController : MonoBehaviour
 			rb.velocity += jumpHeight * Vector3.up;
 		}
 
+		if (Input.GetKeyDown ("s")) {
+			transform.rotation = Quaternion.AngleAxis(90, Vector3.right);
+		}
+
+		if (Input.GetKeyUp ("s")) {
+			transform.rotation = Quaternion.AngleAxis(0, Vector3.right);
+		}
+
 		if (rb.position.y < startingHeight + 1) {
 			isGrounded = true;
 		}
