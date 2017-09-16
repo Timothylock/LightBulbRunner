@@ -9,16 +9,18 @@ public class PlayerController : MonoBehaviour
 	public float jumpHeight;
 	public int lives;
 	public int speed;
-	private int score;
 	public Text scoreText;
 
 	private Rigidbody rb;
-	private bool isGrounded;
+	private float startingHeight;
+	private bool isGrounded; 
+	private int score;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		score = 0;
+		startingHeight = rb.position.y;
 		//rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -speed);
 		//rb.AddForce(0, 0, -speed, ForceMode.Impulse);
 	}
@@ -34,9 +36,14 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetKey("d"))
 			rb.AddForce(-leftRightSpeed, 0, 0, ForceMode.Impulse);
 
-		if (Input.GetKey ("w") && isGrounded)
+		if (Input.GetKey ("w") && isGrounded) {
 			isGrounded = false;
-			//rb.velocity += jumpHeight * Vector3.up;
+			rb.velocity += jumpHeight * Vector3.up;
+		}
+
+		if (rb.position.y < startingHeight + 1) {
+			isGrounded = true;
+		}
 	}
 
 	private void OnTriggerEnter(Collider other) {
@@ -51,10 +58,8 @@ public class PlayerController : MonoBehaviour
 			score += 1;
 			SetCountText ();
 		}
-		if (other.CompareTag ("floor")) {
-			isGrounded = true;
-		}
 	}
+
 
 	private void DropLife() {
 		lives--;

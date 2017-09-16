@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftRightSpeed: 1
-  jumpHeight: 1
+  jumpHeight: 0.5
   lives: 3
   speed: 3
   scoreText: {fileID: 0}
