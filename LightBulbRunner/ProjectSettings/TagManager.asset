@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lightbulb
+  - Path_I
+  - Obstacle
   layers:
   - Default
   - TransparentFX
